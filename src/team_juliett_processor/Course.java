@@ -12,4 +12,7 @@ package team_juliett_processor;
  */
 public class Course {
     // tuesday
+    
+    
+    //this is my stuff - Tali
 }

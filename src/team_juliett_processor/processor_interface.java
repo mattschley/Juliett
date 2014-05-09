@@ -13,9 +13,13 @@ package team_juliett_processor;
 public interface processor_interface {
     public Course[] parse_course_ids(int[] course_ids);
     
-    public void identify_mandatory_conflicts(Course[] courses);
+    public boolean mandatory_conflicts(Course[] courses);
+    //returns true if two "have to take" courses have a time conflict
 
-    public Course [] generate_all_schedules(Course[] shufflees);
+    public Course [] generate_good_courselists(Course[] shufflees);
+    //works with mandatory_conflicts and autofills "have to take courses"
+    //if there are no conflicts, all possible courselists are generated
+    //if there is a conflict, courselists are generated accordingly
     
     
 }

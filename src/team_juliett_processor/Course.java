@@ -12,4 +12,5 @@ package team_juliett_processor;
  */
 public class Course {
     // tuesday
+    // wednesday 
 }

@@ -11,8 +11,9 @@ package team_juliett_processor;
  * @author Ethan
  */
 public class Course {
-    //tuesday
-    
     //thursday - Tali
     
+    // tuesday
+    // wednesday 
+
 }

@@ -28,7 +28,7 @@ public class Course {
     private int location;
     
 // parameters (area 1 distro, etc.)    
-// bool 6 long array
+// bool 6 length array
     private boolean[] distros;
     
 

@@ -11,10 +11,16 @@ package team_juliett_processor;
  * @author Ethan
  */
 public class Course {
-    //thursday - Tali
+    // beginning and end of class--formatted HHMM
+    private int start_time;
+    private int end_time;
     
-    // tuesday
-    // wednesday 
+    // course ID (not to be confused with course number)
+    private int course_id;
+    
+    
+    
+    
 
 }
 

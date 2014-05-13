@@ -10,7 +10,8 @@ package team_juliett_processor;
  *
  * @author Ethan
  */
-public interface processor_interface {
+public interface processor_interface{
+    
     public Course[] parse_course_ids(int[] course_ids);
     //returns array of courses when course id's are inputted
     
@@ -33,7 +34,7 @@ public interface processor_interface {
     //assigns numerical score/rating to a group of four courses
     //this rating is based on rating factors
     
-    public void set_warning_message (schedule[] SL);
+    public void set_warning_message (schedule sL);
     //sets warning message based on warning factors
     
     public int[] get_rated_schedules (int[] schedule_list);

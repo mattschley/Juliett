@@ -17,8 +17,7 @@ public class schedule {
     private int warning_message;
     
     
-    public schedule(){
-        
+    public schedule(){    
     }
     
     

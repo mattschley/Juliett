@@ -12,6 +12,7 @@ package team_juliett_processor;
 public class Course {
     
 // beginning and end of class--formatted HHMM
+    private String course_name; 
     private int start_time;
     private int end_time;
     
@@ -39,7 +40,15 @@ public class Course {
     /*------------------------------------------------------------------------*/
     
 // constructor
-    public Course() {
+    public Course(int st,int et,int dow,int id,int cn,int l,boolean[] d, String n) {
+        start_time = st; 
+        end_time = et; 
+        days_of_week = dow; 
+        course_id = id; 
+        course_number = cn; 
+        location = l; 
+        distros = d;
+        course_name = n; 
         
     }
 

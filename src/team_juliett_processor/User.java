@@ -32,6 +32,31 @@ public class User {
     }
     
     public Course[] schedule() {
+        if (mand.length > 1){
+            
+        }
+        
         return mand;
+    }
+    
+    private Course[][] split_mandatory(Course[] mands) {
+        Course[][] result;
+        result = new Course[mands.length][1];   // initialize to be # of mandatory courses x 1
+        
+        
+        int st;
+        int en;
+        for (int ii = 0; ii < mands.length; ii++) {
+        
+            st = mands[ii].start_time;
+            en = mands[ii].end_time;
+            for (int jj = 0; jj < mands.length - 1; jj ++) {
+                
+            }
+        
+        
+        }
+        
+        return result;
     }
 }

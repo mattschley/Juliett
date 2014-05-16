@@ -77,12 +77,10 @@ public class Course {
         if (!(Integer.toString(this.days_of_week + c.days_of_week).contains("2")))
             return false;
         else
-            if (this.days_of_week == c.days_of_week){
                 if ((this.start_time == c.start_time) || (this.start_time <= c.end_time && this.start_time >= c.start_time)
                  || (this.end_time >= c.start_time && this.end_time <= c.end_time))
-                    return true; 
-            }
-        return false;     
+                    return true;
+        
     }
 
 }   // end definition

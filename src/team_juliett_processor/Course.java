@@ -71,22 +71,16 @@ public class Course {
     }
     
     public boolean conflict (Course c){
-        if (this.days_of_week + c.days_of_week == 11111)
-            return false;
-        else if (this.days_of_week + c.days_of_week == 11110)
-            return false;
-        else if (this.days_of_week + c.days_of_week == 11101)
-            return false;
-        else if (this.days_of_week + c.days_of_week == 11011)
-            return false;
-        else if (this.days_of_week + c.days_of_week == 10111)
-            return false;
-        else if (this.days_of_week + c.days_of_week == 01111)
+        int conflictInt = this.days_of_week + c.days_of_week;
+        
+        if (conflictInt == 11111 || conflictInt == 11110 || conflictInt == 11101 || 
+            conflictInt == 11011 || conflictInt == 10111 || conflictInt == 01111)
             return false;
         else
             if (this.days_of_week == c.days_of_week){
-                if (this.start_time < c.end_time || this.end_time > c.start_time)
-                    return true;
+                if ((this.start_time == c.start_time) || (this.start_time <= c.end_time && this.start_time >= c.start_time)
+                 || (this.end_time >= c.start_time && this.end_time <= c.end_time))
+                    return true; 
             }
         return false;     
     }

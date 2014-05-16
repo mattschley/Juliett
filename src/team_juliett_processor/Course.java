@@ -49,7 +49,7 @@ public class Course {
         /*course_number = cn; 
         location = l;
         distros = d;*/
-         
+
         
     }
 
@@ -64,6 +64,10 @@ public class Course {
         x[1] = end_time;
         
         return x;
+    }
+    
+    public String toString(){
+        return course_name;
     }
 
 }   // end definition

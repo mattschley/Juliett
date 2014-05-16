@@ -73,12 +73,18 @@ public class Course {
     public boolean conflict (Course c){
         int conflictInt = this.days_of_week + c.days_of_week;
         
-        
-        if (!(Integer.toString(this.days_of_week + c.days_of_week).contains("2")))
+        //two classes that do not meet on the same day
+        if   (conflictInt == 11111 || conflictInt == 11110 || conflictInt == 11101 || conflictInt == 11011 || conflictInt == 10111 || conflictInt == 01111 
+           || conflictInt == 11100 || conflictInt == 11001 || conflictInt == 10011 || conflictInt == 00111 || conflictInt == 11010 || conflictInt == 01101 || conflictInt == 10110 || conflictInt == 01011 || conflictInt == 10101
+           || conflictInt == 00011 || conflictInt == 00110 || conflictInt == 01100 || conflictInt == 11000 || conflictInt == 00101 || conflictInt == 10010 || conflictInt == 01001 || conflictInt == 10100 || conflictInt == 01010)
             return false;
+        
+        //two classes that meet on the same days
         else if ((this.start_time == c.start_time) || (this.start_time <= c.end_time && this.start_time >= c.start_time)
                  || (this.end_time >= c.start_time && this.end_time <= c.end_time))
                     return true;
+        
+        //two classes that have a day of interference....
         return false;
     }
 

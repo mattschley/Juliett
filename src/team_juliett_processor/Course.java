@@ -73,8 +73,8 @@ public class Course {
     public boolean conflict (Course c){
         int conflictInt = this.days_of_week + c.days_of_week;
         
-        if (conflictInt == 11111 || conflictInt == 11110 || conflictInt == 11101 || 
-            conflictInt == 11011 || conflictInt == 10111 || conflictInt == 01111)
+        
+        if (!(Integer.toString(this.days_of_week + c.days_of_week).contains("2")))
             return false;
         else
             if (this.days_of_week == c.days_of_week){

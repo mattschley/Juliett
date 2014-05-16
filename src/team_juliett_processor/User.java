@@ -21,7 +21,17 @@ public class User {
     private Course[] desired;
     private Course[] option;
     
-    public User(int loc, Course[] mand_courses, Course[] desired_courses, Course[] optional_courses, int s_start, int s_end, int[] hard_times) {
-        
+    public User(int loc, Course[] mand_courses, Course[] desired_courses, Course[] optional_courses, int s_start, int s_end, int[] hard) {
+        location = loc;
+        mand = mand_courses;
+        desired = desired_courses;
+        option = optional_courses;
+        soft_start = s_start;
+        soft_end = s_end;
+        hard_times = hard;
+    }
+    
+    public Course[] schedule() {
+        return mand;
     }
 }

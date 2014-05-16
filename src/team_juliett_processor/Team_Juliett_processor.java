@@ -21,14 +21,14 @@ public class Team_Juliett_processor {
 
         //apple meets MWF 9-950; course id 100
         //orange meets MWF 2-250 course id 101
-        //pear meets TTh 1230-150
-        //plum meets TTh 2 - 320
-        //banana meets MWF 9-950
+        //pear meets TTh 1230-150 course id 102
+        //plum meets TTh 2 - 320 course id 103
+        //banana meets MWF 9-950 course id 104
         Course apple = new Course("apple", 900, 950, 10101, 100);
         Course orange = new Course("orange", 200, 250, 10101, 101);
-        Course pear = new Course("pear");
-        Course plum = new Course("plum");
-        Course banana = new Course("banana");
+        Course pear = new Course("pear", 1230, 150, 01010, 102);
+        Course plum = new Course("plum", 200, 320, 01010, 103);
+        Course banana = new Course("banana", 900, 950, 10101, 100);
        
         
         Course[] courselist;
@@ -44,12 +44,13 @@ public class Team_Juliett_processor {
             number_of_courses++;
         }
         
-        int [] coursetimes;
-        coursetimes = new int[number_of_courses];
+        int [][] coursetimes;
+        coursetimes = new int[number_of_courses][2];
         for (int i = 0; i<number_of_courses; i++){
-            coursetimes[i] = courselist[i].get_times;
+            coursetimes[i] = courselist[i].get_times();
         }
-        
+        System.out.println(apple.toString()+ " starts at " + coursetimes[0][0] + " and ends at " + coursetimes[0][1] );
+       
         
         
         

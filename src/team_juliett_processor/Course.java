@@ -40,15 +40,16 @@ public class Course {
     /*------------------------------------------------------------------------*/
     
 // constructor
-    public Course(int st,int et,int dow,int id,int cn,int l,boolean[] d, String n) {
+    public Course(String n,int st,int et,int dow,int id) {
+        course_name = n;
         start_time = st; 
         end_time = et; 
         days_of_week = dow; 
         course_id = id; 
-        course_number = cn; 
-        location = l; 
-        distros = d;
-        course_name = n; 
+        /*course_number = cn; 
+        location = l;
+        distros = d;*/
+         
         
     }
 

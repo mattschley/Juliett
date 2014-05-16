@@ -39,6 +39,12 @@ public class Team_Juliett_processor {
         courselist[3] = plum;
         courselist[4] = banana;
         
+        Course mandatory[] = {apple, banana};
+        Course desired[] = {orange, pear};
+        Course optional[] = {plum};
+        int hardsofttimes[] = {800, 800};
+    
+        
         for (int i = 0; i<=4; i++){
             System.out.println(courselist[i].toString());
             number_of_courses++;
@@ -51,6 +57,9 @@ public class Team_Juliett_processor {
         }
         System.out.println(apple.toString()+ " starts at " + coursetimes[0][0] + " and ends at " + coursetimes[0][1] );
        
+        User jimbo = new User (1, mandatory, desired, optional, 800, 600, hardsofttimes);
+        jimbo.schedule();
+        
         
         
         

@@ -13,8 +13,8 @@ public class Course {
     
 // beginning and end of class--formatted HHMM
     private String course_name; 
-    private int start_time;
-    private int end_time;
+    protected int start_time;
+    protected int end_time;
     
 // days of the week on which the class is held (binary format)
     private int days_of_week;

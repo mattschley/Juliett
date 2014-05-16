@@ -69,5 +69,22 @@ public class Course {
     public String toString(){
         return course_name;
     }
+    
+    public boolean conflict (Course c){
+        if (this.days_of_week + c.days_of_week == 11111)
+            return false;
+        else if (this.days_of_week + c.days_of_week == 11110)
+            return false;
+        else if (this.days_of_week + c.days_of_week == 11101)
+            return false;
+        else if (this.days_of_week + c.days_of_week == 11011)
+            return false;
+        else if (this.days_of_week + c.days_of_week == 10111)
+            return false;
+        else if (this.days_of_week + c.days_of_week == 01111)
+            return false;
+        
+            
+    }
 
 }   // end definition

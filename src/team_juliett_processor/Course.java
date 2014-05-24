@@ -46,7 +46,9 @@ public class Course {
         end_time = et; 
         boolean[] days_of_week;
         days_of_week = new boolean[5];
-        for(int i = 0; i <= 5; i++){
+        days_of_week[0] = false;
+        for(int i = 0; i < 5; i++){
+            days_of_week[i] = new boolean();
             days_of_week[i] = false;
         }
         course_id = id; 
@@ -74,27 +76,25 @@ public class Course {
         return course_name;
     }
     
-    public boolean conflict (Course c){
-        int cI = this.days_of_week + c.days_of_week;
-        
-        //two classes that do not meet on the same day
-        if   (cI == 11111 || cI == 11110 || cI == 11101 || cI == 11011 || cI == 10111 || cI == 01111 
-           || cI == 11100 || cI == 11001 || cI == 10011 || cI == 00111 || cI == 01110 || cI == 11010 || cI == 01101 || cI == 10110 || cI == 01011 || cI == 10101
-           || cI == 00011 || cI == 00110 || cI == 01100 || cI == 11000 || cI == 10001 || cI == 00101 || cI == 10010 || cI == 01001 || cI == 10100 || cI == 01010)
-            return false;
-        
-        //two classes that meet on the same days
-        else if (this.days_of_week == c.days_of_week){
-            if ((this.start_time == c.start_time) || (this.start_time <= c.end_time && this.start_time >= c.start_time)
-                 || (this.end_time >= c.start_time && this.end_time <= c.end_time))
-                    return true;
-        }
-        
-        //two classes that have a day of interference....
-        {
+    public boolean[] get_days_of_week(){
+        return days_of_week;
+    }
             
+    public boolean conflict (Course c){
+        for (int i = 0; i <=5; i++){
+            if (this.days_of_week[i] && (c.days_of_week[i]))
+                return true;
         }
         return false;
+    }
+    
+    public void setDaysofWeek(String t){
+        if (t.contains("Mo"))
+            days_of_week[0] = true; 
+    }
+    
+    public String getDaysofWeek(){
+        return "" + days_of_week[0];
     }
 
 }   // end definition

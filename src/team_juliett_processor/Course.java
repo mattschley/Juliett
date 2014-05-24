@@ -17,7 +17,7 @@ public class Course {
     protected int end_time;
     
 // days of the week on which the class is held (binary format)
-    private int days_of_week;
+    private boolean[] days_of_week;
     
 // course ID (not to be confused with course number)
     private int course_id;
@@ -40,11 +40,15 @@ public class Course {
     /*------------------------------------------------------------------------*/
     
 // constructor
-    public Course(String n,int st,int et,int dow,int id) {
+    public Course(String n,int st,int et,int id) {
         course_name = n;
         start_time = st; 
         end_time = et; 
-        days_of_week = dow; 
+        boolean[] days_of_week;
+        days_of_week = new boolean[5];
+        for(int i = 0; i <= 5; i++){
+            days_of_week[i] = false;
+        }
         course_id = id; 
         /*course_number = cn; 
         location = l;
@@ -71,20 +75,25 @@ public class Course {
     }
     
     public boolean conflict (Course c){
-        int conflictInt = this.days_of_week + c.days_of_week;
+        int cI = this.days_of_week + c.days_of_week;
         
         //two classes that do not meet on the same day
-        if   (conflictInt == 11111 || conflictInt == 11110 || conflictInt == 11101 || conflictInt == 11011 || conflictInt == 10111 || conflictInt == 01111 
-           || conflictInt == 11100 || conflictInt == 11001 || conflictInt == 10011 || conflictInt == 00111 || conflictInt == 11010 || conflictInt == 01101 || conflictInt == 10110 || conflictInt == 01011 || conflictInt == 10101
-           || conflictInt == 00011 || conflictInt == 00110 || conflictInt == 01100 || conflictInt == 11000 || conflictInt == 00101 || conflictInt == 10010 || conflictInt == 01001 || conflictInt == 10100 || conflictInt == 01010)
+        if   (cI == 11111 || cI == 11110 || cI == 11101 || cI == 11011 || cI == 10111 || cI == 01111 
+           || cI == 11100 || cI == 11001 || cI == 10011 || cI == 00111 || cI == 01110 || cI == 11010 || cI == 01101 || cI == 10110 || cI == 01011 || cI == 10101
+           || cI == 00011 || cI == 00110 || cI == 01100 || cI == 11000 || cI == 10001 || cI == 00101 || cI == 10010 || cI == 01001 || cI == 10100 || cI == 01010)
             return false;
         
         //two classes that meet on the same days
-        else if ((this.start_time == c.start_time) || (this.start_time <= c.end_time && this.start_time >= c.start_time)
+        else if (this.days_of_week == c.days_of_week){
+            if ((this.start_time == c.start_time) || (this.start_time <= c.end_time && this.start_time >= c.start_time)
                  || (this.end_time >= c.start_time && this.end_time <= c.end_time))
                     return true;
+        }
         
         //two classes that have a day of interference....
+        {
+            
+        }
         return false;
     }
 

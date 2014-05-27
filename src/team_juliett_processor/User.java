@@ -15,7 +15,6 @@ public class User {
     
     private int soft_start;
     private int soft_end;
-    private int [] hard_times;
     
     private Course[] mand;
     private Course[] option;
@@ -24,13 +23,12 @@ public class User {
         
     }
     
-    public User(int loc, Course[] mand_courses, Course[] optional_courses, int s_start, int s_end, int[] hard) {
+    public User(int loc, int[] mand_courses, int[] optional_courses, int start_t, int end_t) {
         location = loc;
-        mand = mand_courses;
-        option = optional_courses;
-        soft_start = s_start;
-        soft_end = s_end;
-        hard_times = hard;
+        //mand = mand_courses;
+        //option = optional_courses;
+        soft_start = start_t;
+        soft_end = end_t;
     }
     
     private schedule[] schedule(Course[] mands, Course[] option) {

@@ -23,7 +23,7 @@ public class Team_Juliett_processor {
         //english meets MWF 11-1150 course id 101
         //eecs meets MWF 12-1250 course id 102
         //history meets TTh 1230 - 150 course id 103
-        //banana meets MWF 9-950 course id 104
+        // meets MWF 9-950 course id 104
         Course math = new Course       ("math", 900, 950, 100);
         Course english = new Course("english", 1100, 1150, 101);
         Course eecs = new Course      ("eecs", 1200, 1250, 105);
@@ -59,7 +59,10 @@ public class Team_Juliett_processor {
         }
         System.out.println(math.toString()+ " starts at " + coursetimes[0][0] + " and ends at " + coursetimes[0][1] );
        
-      
+        math.setDaysofWeek("MoWedFri");
+        gym.setDaysofWeek("MoWedFri"); 
+        System.out.println(math.getDaysofWeek());
+        
         for (int i = 1; i<mandatory.length; i++){
             System.out.println(mandatory[0].conflict(courselist[i]));
         }

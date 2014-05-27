@@ -44,7 +44,6 @@ public class Course {
         course_name = n;
         start_time = st; 
         end_time = et; 
-        boolean[] days_of_week;
         days_of_week = new boolean[5];
         //days_of_week[0] = false;
         for(int i = 0; i < 5; i++){

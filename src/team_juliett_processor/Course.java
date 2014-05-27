@@ -46,9 +46,9 @@ public class Course {
         end_time = et; 
         boolean[] days_of_week;
         days_of_week = new boolean[5];
-        days_of_week[0] = false;
+        //days_of_week[0] = false;
         for(int i = 0; i < 5; i++){
-            days_of_week[i] = new boolean();
+            //days_of_week[i] = new boolean();
             days_of_week[i] = false;
         }
         course_id = id; 
@@ -56,6 +56,10 @@ public class Course {
         location = l;
         distros = d;*/
 
+        
+    }
+    
+    public Course(int course_id) {
         
     }
 

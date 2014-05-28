@@ -23,7 +23,7 @@ public class Team_Juliett_processor {
     
     public static void main(String[] args) throws IOException{
         
-        BufferedReader br = new BufferedReader(new FileReader("C:/EECS_DB.txt"));
+        BufferedReader br = new BufferedReader(new FileReader("EECS_DB.txt"));
         
         String line;
         

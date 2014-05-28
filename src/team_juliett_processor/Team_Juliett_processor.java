@@ -30,6 +30,12 @@ public class Team_Juliett_processor {
         
         while((line = br.readLine()) != null) {
             System.out.println(line);
+            if (line.contains("58477")){
+                int mdIndex = line.indexOf("meeting_days"));
+                int stIndex = line.indexOf("start_time"));
+                String meetingDays = (line.substring(mdIndex+16, stIndex-4));
+                System.out.println(meetingDays);
+            }
         }
         br.close();
         

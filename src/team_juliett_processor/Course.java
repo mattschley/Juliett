@@ -40,23 +40,6 @@ public class Course {
     /*------------------------------------------------------------------------*/
     
 // constructor
-    public Course(String n, int st, int et, String id) {
-        course_name = n;
-        start_time = st; 
-        end_time = et; 
-        days_of_week = new boolean[5];
-        //days_of_week[0] = false;
-        for(int i = 0; i < 5; i++){
-            //days_of_week[i] = new boolean();
-            days_of_week[i] = false;
-        }
-        course_id = id; 
-        /*course_number = cn; 
-        location = l;
-        distros = d;*/
-
-        
-    }
     
     public Course(String course_id) {
         this.course_id = course_id;
@@ -75,9 +58,7 @@ public class Course {
     }
     
     public String getIDString(){
-        String IDString;
-        IDString = course_id;
-        return IDString;  
+        return course_id;
     }
 
     /*------------------------------------------------------------------------*/    
@@ -110,6 +91,16 @@ public class Course {
         }
         return false;
     }
+    
+    public void setName(String t){
+        this.course_name = t;
+    }
+    
+    public String getName(){
+        return course_name;
+    }
+    
+    
     
     public void setDaysofWeek(String t){
         if (t.contains("Mo"))

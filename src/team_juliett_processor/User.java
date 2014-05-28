@@ -36,17 +36,6 @@ public class User {
         end = end_t;
     }
     
-    private schedule[] schedule(Course[] mands, Course[] option) {
-        schedule[] results;
-        results = new schedule[0];
-        schedule[] temp;
-        
-        if (mands.length == 0)
-            return results;
-        
-        
-        return results;
-    }
     
     public String test() {
         return "Hello, World!";

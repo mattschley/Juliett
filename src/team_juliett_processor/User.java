@@ -29,8 +29,15 @@ public class User {
         int option_len = optional_courses.length;
         
         mand = new Course[mand_len];
+        for (int ii = 0; ii < mand_len; ii++) {
+            mand[ii] = new Course(mand_courses[ii] + "");
+        }
         
         option = new Course[option_len];
+        for (int ii = 0; ii < option_len; ii++) {
+            option[ii] = new Course(optional_courses[ii] + "");
+        }
+        
         
         start = start_t;
         end = end_t;

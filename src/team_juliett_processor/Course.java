@@ -84,20 +84,35 @@ public class Course {
     }
             
     public boolean conflict (Course c){
-        for (int i = 0; i <=5; i++){
-            if (this.days_of_week[i] && (c.days_of_week[i]))
-                return true;
+        for (int i = 0; i <5; i++){
+            if (this.days_of_week[i] && c.days_of_week[i])
+                if ((this.start_time == c.start_time) || (this.start_time < c.end_time && this.start_time > c.start_time)
+                                                      || (this.end_time > c.start_time && this.end_time < c.end_time))
+                    return true;
         }
         return false;
     }
     
     public void setDaysofWeek(String t){
         if (t.contains("Mo"))
-            days_of_week[0] = true; 
+            days_of_week[0] = true;
+        if (t.contains("Tu"))
+            days_of_week[1] = true;
+        if (t.contains("We"))
+            days_of_week[2] = true;
+        if (t.contains("Th"))
+            days_of_week[3] = true;
+        if (t.contains("Fr"))
+            days_of_week[4] = true;
     }
     
     public String getDaysofWeek(){
-        return "" + days_of_week[0];
+        return "----" + this.course_name + "----" +
+                "\nMo: " + days_of_week[0] + 
+                "\nTu: " + days_of_week[1] + 
+                "\nWe: " + days_of_week[2] + 
+                "\nTh: " + days_of_week[3] + 
+                "\nFr: " + days_of_week[4];
     }
 
 }   // end definition

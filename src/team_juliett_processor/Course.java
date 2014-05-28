@@ -59,7 +59,7 @@ public class Course {
     }
     
     public Course(int course_id) {
-        
+        this.course_name = "" + course_id;
     }
 
     /*------------------------------------------------------------------------*/    

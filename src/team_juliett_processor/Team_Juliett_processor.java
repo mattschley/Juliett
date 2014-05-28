@@ -46,8 +46,7 @@ public class Team_Juliett_processor {
         courselist[3] = course4;
         //THIS IS FOR TESTING*/
         
-        int[] courselist;
-        courselist = [58458, 58459, 58460, 58461];
+        int[] courselist = {58458, 58459, 58460, 58461};
         
         
         while((line = br.readLine()) != null) {

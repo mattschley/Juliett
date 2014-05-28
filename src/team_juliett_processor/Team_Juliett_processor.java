@@ -47,6 +47,8 @@ public class Team_Juliett_processor {
         //THIS IS FOR TESTING*/
         
         int[] courselist = {58458, 58459, 58460, 58461};
+        Course[] courses;
+        int numberofCourses = 0;
         
         
         while((line = br.readLine()) != null) {
@@ -54,14 +56,20 @@ public class Team_Juliett_processor {
             for (int i=0; i<courselist.length; i++){
                 String id;
                 id = Integer.toString(courselist[i]);
+                //System.out.println(courselist[i]);
                 if (line.contains(id){
-                    int mdIndex;
-                    mdIndex = line.indexOf("meeting_days");
-                    int stIndex; 
-                    stIndex = line.indexOf("start_time");
+                    int mdIndex = line.indexOf("meeting_days");
+                    int stIndex = line.indexOf("start_time");
                     String meetingDays = (line.substring(mdIndex+16, stIndex-4));
                     System.out.println(meetingDays);
-            }
+                    Course c = new Course(id);
+                    c.setDaysofWeek(meetingDays);
+                    System.out.println(c.getIDString());
+                    System.out.println(c.getDaysofWeek());
+                    //c.setDaysofWeek(meetingDays));
+                    //courses[i] = c;
+                }
+                
             }
         }
         br.close();

@@ -25,6 +25,7 @@ public class Team_Juliett_processor {
         
         BufferedReader br = new BufferedReader(new FileReader("EECS_DB.txt"));
         
+        
         String line;
         
         while((line = br.readLine()) != null) {

@@ -20,7 +20,7 @@ public class Course {
     private boolean[] days_of_week;
     
 // course ID (not to be confused with course number)
-    private int course_id;
+    private String course_id;
     
 // course number
     private int course_number;
@@ -40,7 +40,7 @@ public class Course {
     /*------------------------------------------------------------------------*/
     
 // constructor
-    public Course(String n,int st,int et,int id) {
+    public Course(String n, int st, int et, String id) {
         course_name = n;
         start_time = st; 
         end_time = et; 
@@ -58,8 +58,26 @@ public class Course {
         
     }
     
-    public Course(int course_id) {
-        this.course_name = "" + course_id;
+    public Course(String course_id) {
+        this.course_id = course_id;
+        days_of_week = new boolean[5];
+        for(int i = 0; i < 5; i++){
+            //days_of_week[i] = new boolean();
+            days_of_week[i] = false;
+        }
+        this.course_name = null;
+        this.course_number = 0;
+        this.distros = null;
+        this.end_time = 0;
+        this.location = 0;
+        this.start_time = 0;
+        
+    }
+    
+    public String getIDString(){
+        String IDString;
+        IDString = course_id;
+        return IDString;  
     }
 
     /*------------------------------------------------------------------------*/    

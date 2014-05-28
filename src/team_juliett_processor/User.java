@@ -13,8 +13,8 @@ package team_juliett_processor;
 public class User {
     private int location;   // 0 = South; 1 = Central; 2 = North
     
-    private int soft_start;
-    private int soft_end;
+    private int start;
+    private int end;
     
     private Course[] mand;
     private Course[] option;
@@ -25,10 +25,15 @@ public class User {
     
     public User(int loc, int[] mand_courses, int[] optional_courses, int start_t, int end_t) {
         location = loc;
-        //mand = mand_courses;
-        //option = optional_courses;
-        soft_start = start_t;
-        soft_end = end_t;
+        int mand_len = mand_courses.length;
+        int option_len = optional_courses.length;
+        
+        mand = new Course[mand_len];
+        
+        option = new Course[option_len];
+        
+        start = start_t;
+        end = end_t;
     }
     
     private schedule[] schedule(Course[] mands, Course[] option) {
@@ -39,13 +44,6 @@ public class User {
         if (mands.length == 0)
             return results;
         
-//        for (int ii = 0; ii < mands.length; ii++) {
-//            for (int jj = 0; jj < mands.length; jj ++) {
-//                if (ii != jj)
-//                    if (mands[ii].conflict(mands[jj]))
-//                        
-//            }
-//        }
         
         return results;
     }

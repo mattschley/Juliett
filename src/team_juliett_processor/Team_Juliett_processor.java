@@ -28,13 +28,41 @@ public class Team_Juliett_processor {
         
         String line;
         
+        /*//THIS IS FOR TESTING
+        Course course1;
+        course1 = new Course(58458);
+        Course course2;
+        course2 = new Course(58459);
+        Course course3;
+        course3 = new Course(58460);
+        Course course4;
+        course4 = new Course(58461);
+        
+        Course[] courselist;
+        courselist = new Course[4]
+        courselist[0] = course1;
+        courselist[1] = course2;
+        courselist[2] = course3;
+        courselist[3] = course4;
+        //THIS IS FOR TESTING*/
+        
+        int[] courselist;
+        courselist = [58458, 58459, 58460, 58461];
+        
+        
         while((line = br.readLine()) != null) {
             System.out.println(line);
-            if (line.contains("58477")){
-                int mdIndex = line.indexOf("meeting_days"));
-                int stIndex = line.indexOf("start_time"));
-                String meetingDays = (line.substring(mdIndex+16, stIndex-4));
-                System.out.println(meetingDays);
+            for (int i=0; i<courselist.length; i++){
+                String id;
+                id = Integer.toString(courselist[i]);
+                if (line.contains(id){
+                    int mdIndex;
+                    mdIndex = line.indexOf("meeting_days");
+                    int stIndex; 
+                    stIndex = line.indexOf("start_time");
+                    String meetingDays = (line.substring(mdIndex+16, stIndex-4));
+                    System.out.println(meetingDays);
+            }
             }
         }
         br.close();

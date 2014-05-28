@@ -56,7 +56,7 @@ public class Team_Juliett_processor {
                 String id;
                 id = Integer.toString(courselist[i]);
                 //System.out.println(courselist[i]);
-                if (line.contains(id){
+                if (line.contains(id)){
                     int mdIndex = line.indexOf("meeting_days");
                     int stIndex = line.indexOf("start_time");
                     int tIndex = line.indexOf("title");

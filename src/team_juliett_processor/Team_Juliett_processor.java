@@ -62,17 +62,25 @@ public class Team_Juliett_processor {
                 if (line.contains(id)){
                     int mdIndex = line.indexOf("meeting_days");
                     int stIndex = line.indexOf("start_time");
+                    int etIndex = line.indexOf("end_time");
+                    int dIndex = line.indexOf("start_date");
                     int tIndex = line.indexOf("title");
                     int t1Index = line.indexOf("term");
-                    String title = (line.substring(tIndex+9, t1Index-4));
                     
+                    String title = (line.substring(tIndex+9, t1Index-4));
                     String meetingDays = (line.substring(mdIndex+16, stIndex-4));
+                    String startTime = (line.substring(stIndex+14,etIndex-4));
+                    String endTime = (line.substring(etIndex+12, dIndex-4));
+                    
                     Course c = new Course(id);
                     System.out.println(c.getIDString());
                     System.out.println(meetingDays);
                     c.setName(title);
                     c.setDaysofWeek(meetingDays);
                     System.out.println(c.getDaysofWeek());
+                    
+                    System.out.println("Starts at " + startTime);
+                    System.out.println("Ends at " + endTime);
                     System.out.println("\n");
                     //c.setDaysofWeek(meetingDays));
                     //courses[i] = c;

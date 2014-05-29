@@ -116,6 +116,7 @@ public class Course{
     }
     
     public String getDaysofWeek(){
+        //test to see if the days of the week are being set correctly
         return "----" + this.course_name + "----" +
                 "\nMo: " + days_of_week[0] + 
                 "\nTu: " + days_of_week[1] + 

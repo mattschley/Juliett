@@ -9,6 +9,10 @@ package team_juliett_processor;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  *
@@ -21,7 +25,7 @@ public class Team_Juliett_processor {
      */
     private static int number_of_courses;
     
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException, ParseException{
         
         BufferedReader br = new BufferedReader(new FileReader("EECS_DB.txt"));
         
@@ -69,8 +73,8 @@ public class Team_Juliett_processor {
                     
                     String title = (line.substring(tIndex+9, t1Index-4));
                     String meetingDays = (line.substring(mdIndex+16, stIndex-4));
-                    String startTime = (line.substring(stIndex+14,etIndex-4));
-                    String endTime = (line.substring(etIndex+12, dIndex-4));
+                    String startTimeS = (line.substring(stIndex+14,etIndex-4));
+                    String endTimeS = (line.substring(etIndex+12, dIndex-4));
                     
                     Course c = new Course(id);
                     System.out.println(c.getIDString());
@@ -79,8 +83,13 @@ public class Team_Juliett_processor {
                     c.setDaysofWeek(meetingDays);
                     System.out.println(c.getDaysofWeek());
                     
-                    System.out.println("Starts at " + startTime);
-                    System.out.println("Ends at " + endTime);
+                    System.out.println("Starts at " + startTimeS);
+                    System.out.println("Ends at " + endTimeS);
+                    
+                    DateFormat format = new SimpleDateFormat("HH:mm:ss"); 
+                    Date startTime = format.parse(startTimeS);
+                    System.out.println(startTime);
+                    
                     System.out.println("\n");
                     //c.setDaysofWeek(meetingDays));
                     //courses[i] = c;

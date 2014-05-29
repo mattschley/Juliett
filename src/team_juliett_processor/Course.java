@@ -9,7 +9,7 @@ package team_juliett_processor;
  *
  * @author Ethan
  */
-public class Course {
+public class Course{
     
 // beginning and end of class--formatted HHMM
     private String course_name; 
@@ -123,5 +123,14 @@ public class Course {
                 "\nTh: " + days_of_week[3] + 
                 "\nFr: " + days_of_week[4];
     }
+    
+    public void setStartTime(String t){
+        
+    }
+    
+    public void setEndTime(String t){
+        
+    }
+
 
 }   // end definition

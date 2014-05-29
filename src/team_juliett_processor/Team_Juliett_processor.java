@@ -46,15 +46,18 @@ public class Team_Juliett_processor {
         courselist[3] = course4;
         //THIS IS FOR TESTING*/
         
-        int[] courselist = {58458, 58459, 58460, 58461};
-        Course[] courses;
-        int numberofCourses = 0;
+        User bob;
+        bob = new User( 1, new int[]{58458, 58459, 58460, 58461}, null, 10, 5);
+        System.out.println(bob.toString());
+        
+        int[] bobscourses = bob.getMands();
+        int numberofCourses = bobscourses.length;
         
         
         while((line = br.readLine()) != null) {
-            for (int i=0; i<courselist.length; i++){
+            for (int i=0; i<numberofCourses; i++){
                 String id;
-                id = Integer.toString(courselist[i]);
+                id = Integer.toString(bobscourses[i]);
                 //System.out.println(courselist[i]);
                 if (line.contains(id)){
                     int mdIndex = line.indexOf("meeting_days");
@@ -78,18 +81,6 @@ public class Team_Juliett_processor {
             }
         }
         br.close();
-        
-        User bob;
-        int[] mands;
-        int[] options;
-        mands = new int[3];
-        options = new int[3];
-        
-        mands[0] = mands[1] = mands[2] = options[0] = options[1] = options[2] = 3;
-        
-        bob = new User(1, mands, options, 0, 1);
-        
-        System.out.println(bob.test());
-   
+      
     }
 }

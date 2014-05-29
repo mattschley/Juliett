@@ -16,8 +16,12 @@ public class User {
     private int start;
     private int end;
     
-    private Course[] mand;
-    private Course[] option;
+    private int[] mand = new int[max_mand_length];
+    private int[] option = new int[max_option_length];
+    
+    private static final int max_mand_length = 5;
+    private static final int max_option_length = 5;
+
     
     public User() {
         
@@ -25,28 +29,38 @@ public class User {
     
     public User(int loc, int[] mand_courses, int[] optional_courses, int start_t, int end_t) {
         location = loc;
-        int mand_len = mand_courses.length;
-        int option_len = optional_courses.length;
-        
-        mand = new Course[mand_len];
-        for (int ii = 0; ii < mand_len; ii++) {
-            mand[ii] = new Course(mand_courses[ii] + "");
-        }
-        
-        option = new Course[option_len];
-        for (int ii = 0; ii < option_len; ii++) {
-            option[ii] = new Course(optional_courses[ii] + "");
-        }
-        
-        
+        mand = mand_courses;
+        option = optional_courses;
         start = start_t;
         end = end_t;
     }
     
     
-    public String test() {
-        return "Hello, World!";
+    public int getLoc() {
+        return location;
     }
-        
+    
+    public int getStartTime(){
+        return start;
+    }
+    
+    public int getEndTime(){
+        return end;
+    }
+    
+    public int[] getMands(){
+        return mand;
+    }
+    
+    public int[] getOptional(){
+        return option;
+    }
+    
+    public String toString(){
+        return "This is user " + (location+start+end)*12;
+    }
+
+     
+
 
 }

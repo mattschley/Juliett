@@ -50,7 +50,7 @@ public class Team_Juliett_processor {
         courselist[3] = course4;
         //THIS IS FOR TESTING*/
         
-        User bob;
+        User bob; // accept integer array from front-end team
         bob = new User( 1, new int[]{58458, 58459, 58460, 58461}, null, 10, 5);
         System.out.println(bob.toString());
         

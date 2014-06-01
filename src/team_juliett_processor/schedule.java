@@ -12,18 +12,19 @@ package team_juliett_processor;
  */
 public class schedule {
     
-    private Course[] courses;
+    private Course[] mand_courses;
+    private Course[] opti_courses;
     private int rating;
     static private int[] warning_messages;
     
     
     private String warningmessage;
     
-    public schedule(Course[] courses){
+    public schedule(Course[] courses1, Course[] courses2){
         warningmessage = "";
-        Course[] test = courses;
+        mand_courses = courses1;
+        opti_courses = courses2; 
         rating = 0; 
-       
     }
     public void processWarningArray(int[] n){
     for(int i = 0; i < n.length; i++){

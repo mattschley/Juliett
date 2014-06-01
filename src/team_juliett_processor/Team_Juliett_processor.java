@@ -56,6 +56,8 @@ public class Team_Juliett_processor {
         
         int[] bobscourses = bob.getMands();
         int numberofCourses = bobscourses.length;
+        Course[] bobsCourses;
+        bobsCourses = new Course[numberofCourses];
         
         
         while((line = br.readLine()) != null) {
@@ -83,26 +85,32 @@ public class Team_Juliett_processor {
                     String endTimeS = (line.substring(etIndex+12, etIndex+14));
                     String endTimeS1 = (line.substring(etIndex+15, etIndex+17));
                     endTimeS += endTimeS1;
+
+                    bobsCourses[i] = new Course(id);
+
+                    bobsCourses[i].setName(title);
+                    bobsCourses[i].setDaysofWeek(meetingDays);
+                    bobsCourses[i].setStartTime(startTimeS);
+                    bobsCourses[i].setEndTime(endTimeS);
                     
-                    Course c = new Course(id);
-                    System.out.println(c.getIDString());
-                    System.out.println(meetingDays);
-                    c.setName(title);
-                    c.setDaysofWeek(meetingDays);
-                    System.out.println(c.getDaysofWeek());
-                    
-                    System.out.println("Starts at " + startTimeS);
-                    System.out.println("Ends at " + endTimeS);
-                    
+                    System.out.println(bobsCourses[i].getIDString());
+                    System.out.println(bobsCourses[i].toString());
+
+
                     
                     System.out.println("\n");
                     //c.setDaysofWeek(meetingDays));
                     //courses[i] = c;
                 }
+
                 
             }
+                         
         }
         br.close();
+        if (!bobsCourses[0].conflict(bobsCourses[1]))
+                System.out.println("no");
       
     }
+
 }

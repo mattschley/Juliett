@@ -84,15 +84,20 @@ public class Team_Juliett_processor {
                     String endTimeS1 = (line.substring(etIndex+15, etIndex+17));
                     endTimeS += endTimeS1;
                     
-                    Course c = new Course(id);
-                    System.out.println(c.getIDString());
+                    Course c1 = new Course(id);
+                    System.out.println(c1.getIDString());
                     System.out.println(meetingDays);
-                    c.setName(title);
-                    c.setDaysofWeek(meetingDays);
-                    System.out.println(c.getDaysofWeek());
+                    System.out.println(c1.getDaysofWeek());
                     
                     System.out.println("Starts at " + startTimeS);
                     System.out.println("Ends at " + endTimeS);
+                    
+                    int startTime = Integer.parseInt(startTimeS);
+
+                    
+                    c1.setName(title);
+                    c1.setDaysofWeek(meetingDays);
+                           
                     
                     
                     System.out.println("\n");
@@ -105,4 +110,5 @@ public class Team_Juliett_processor {
         br.close();
       
     }
+
 }

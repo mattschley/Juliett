@@ -17,8 +17,30 @@ public class schedule {
     private int warning_message;
     
     
-    public schedule(){    
+    private String warningmessage;
+    
+    public schedule(){
+        warningmessage = "";
     }
+    
+    
+    public void setWarngingMessage(int n){
+        if (n == NOLUNCH)
+            warningmessage += "you can't eat lunch!";
+        
+        
+        warningmessage += "warning detected";
+        
+    }
+    
+    public String getWarningMessage(){
+        return warningmessage;
+    }
+    
+       
+        
+    public static final int NOLUNCH = 41; 
+    
     
     
 }

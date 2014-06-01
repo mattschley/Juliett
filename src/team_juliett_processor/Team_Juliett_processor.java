@@ -51,7 +51,7 @@ public class Team_Juliett_processor {
         //THIS IS FOR TESTING*/
         
         User bob; // accept integer array from front-end team
-        bob = new User(1, new int[]{58458, 58459, 58460, 58461}, null, 10, 5);
+        bob = new User(1, new int[]{58458, 58459, 58460, 58461}, null, 1000, 1700);
         System.out.println(bob.toString());
         
         int[] bobscourses = bob.getMands();
@@ -76,11 +76,13 @@ public class Team_Juliett_processor {
                     String title = (line.substring(tIndex+9, t1Index-4));
                     String meetingDays = (line.substring(mdIndex+16, stIndex-4));
                     
-                    String startTimeS = (line.substring(stIndex+14,stIndex+16));
+                    String startTimeS = "" + (line.substring(stIndex+14,stIndex+16));
                     String startTimeS1 = (line.substring(stIndex+17,stIndex+19));
+                    startTimeS += startTimeS1;
                     
                     String endTimeS = (line.substring(etIndex+12, etIndex+14));
                     String endTimeS1 = (line.substring(etIndex+15, etIndex+17));
+                    endTimeS += endTimeS1;
                     
                     Course c = new Course(id);
                     System.out.println(c.getIDString());
@@ -89,8 +91,8 @@ public class Team_Juliett_processor {
                     c.setDaysofWeek(meetingDays);
                     System.out.println(c.getDaysofWeek());
                     
-                    System.out.println("Starts at " + startTimeS + startTimeS1);
-                    System.out.println("Ends at " + endTimeS + endTimeS1);
+                    System.out.println("Starts at " + startTimeS);
+                    System.out.println("Ends at " + endTimeS);
                     
                     
                     System.out.println("\n");

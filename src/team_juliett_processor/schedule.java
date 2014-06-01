@@ -14,17 +14,20 @@ public class schedule {
     
     private Course[] courses;
     private int rating;
-    private int[] warning_messages;
+    static private int[] warning_messages;
     
     
     private String warningmessage;
     
-    public schedule(){
+    public schedule(Course[] courses){
         warningmessage = "";
+        Course[] test = courses;
+        rating = 0; 
+       
     }
     public void processWarningArray(int[] n){
-    for(int i = 0; i < warning_messages.length; i++){
-        int warning_instance = warning_messages[i];
+    for(int i = 0; i < n.length; i++){
+        int warning_instance = n[i];
         setWarningMessage(warning_instance);
     }
     

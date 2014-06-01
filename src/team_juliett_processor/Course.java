@@ -126,11 +126,11 @@ public class Course{
     }
     
     public void setStartTime(String t){
-        
+        this.start_time = Integer.parseInt(t);
     }
     
-    public void setEndTime(String t){
-        
+    public void setEndTime(String u){
+        this.end_time = Integer.parseInt(u);
     }
 
 

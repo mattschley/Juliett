@@ -95,10 +95,8 @@ public class Team_Juliett_processor {
                     
                     System.out.println(bobsCourses[i].getIDString());
                     System.out.println(bobsCourses[i].toString());
-                    System.out.println(meetingDays);
 
-                    System.out.println("Starts at " + startTimeS);
-                    System.out.println("Ends at " + endTimeS);
+
                     
                     System.out.println("\n");
                     //c.setDaysofWeek(meetingDays));

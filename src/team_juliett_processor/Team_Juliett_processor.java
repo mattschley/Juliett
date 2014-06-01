@@ -102,10 +102,14 @@ public class Team_Juliett_processor {
                     //c.setDaysofWeek(meetingDays));
                     //courses[i] = c;
                 }
+
                 
             }
+                         
         }
         br.close();
+        if (!bobsCourses[0].conflict(bobsCourses[1]))
+                System.out.println("no");
       
     }
 

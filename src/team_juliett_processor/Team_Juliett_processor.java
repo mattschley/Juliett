@@ -55,7 +55,8 @@ public class Team_Juliett_processor {
         System.out.println(bob.toString());
         
         int[] bobscourses = bob.getMands();
-        int numberofCourses = bobscourses.length;
+        int[] bobscourses2 = bob.getOptional();
+        int numberofCourses = bobscourses.length + bobscourses2.length;
         Course[] bobsCourses;
         bobsCourses = new Course[numberofCourses];
         
@@ -68,6 +69,7 @@ public class Team_Juliett_processor {
                 id = Integer.toString(bobscourses[i]);
                 //System.out.println(courselist[i]);
                 if (line.contains(id)){
+                    
                     int mdIndex = line.indexOf("meeting_days");
                     int stIndex = line.indexOf("start_time");
                     int etIndex = line.indexOf("end_time");
@@ -108,8 +110,8 @@ public class Team_Juliett_processor {
                          
         }
         br.close();
-        if (!bobsCourses[0].conflict(bobsCourses[1]))
-                System.out.println("no");
+        
+        
       
     }
 

@@ -14,7 +14,7 @@ public class schedule {
     
     private Course[] courses;
     private int rating;
-    private int warning_message;
+    private int[] warning_messages;
     
     
     private String warningmessage;
@@ -22,13 +22,20 @@ public class schedule {
     public schedule(){
         warningmessage = "";
     }
+    public void processWarningArray(int[] n){
+    for(int i = 0; i < warning_messages.length; i++){
+        int warning_instance = warning_messages[i];
+        setWarningMessage(warning_instance);
+    }
     
+    }
     
-    public void setWarngingMessage(int n){
+    public void setWarningMessage(int n){
         if (n == NOLUNCH)
             warningmessage += "you can't eat lunch!";
+        else if (n == LONGWALK){warningmessage += "you will have a long walk";}
         
-        
+        else
         warningmessage += "warning detected";
         
     }
@@ -40,7 +47,7 @@ public class schedule {
        
         
     public static final int NOLUNCH = 41; 
-    
+    public static final int LONGWALK = 42;
     
     
 }

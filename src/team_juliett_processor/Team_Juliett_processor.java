@@ -51,7 +51,7 @@ public class Team_Juliett_processor {
         //THIS IS FOR TESTING*/
         
         User bob; // accept integer array from front-end team
-        bob = new User( 1, new int[]{58458, 58459, 58460, 58461}, null, 10, 5);
+        bob = new User(1, new int[]{58458, 58459, 58460, 58461}, null, 10, 5);
         System.out.println(bob.toString());
         
         int[] bobscourses = bob.getMands();
@@ -59,7 +59,9 @@ public class Team_Juliett_processor {
         
         
         while((line = br.readLine()) != null) {
+            
             for (int i=0; i<numberofCourses; i++){
+                
                 String id;
                 id = Integer.toString(bobscourses[i]);
                 //System.out.println(courselist[i]);
@@ -73,8 +75,12 @@ public class Team_Juliett_processor {
                     
                     String title = (line.substring(tIndex+9, t1Index-4));
                     String meetingDays = (line.substring(mdIndex+16, stIndex-4));
-                    String startTimeS = (line.substring(stIndex+14,etIndex-4));
-                    String endTimeS = (line.substring(etIndex+12, dIndex-4));
+                    
+                    String startTimeS = (line.substring(stIndex+14,stIndex+16));
+                    String startTimeS1 = (line.substring(stIndex+17,stIndex+19));
+                    
+                    String endTimeS = (line.substring(etIndex+12, etIndex+14));
+                    String endTimeS1 = (line.substring(etIndex+15, etIndex+17));
                     
                     Course c = new Course(id);
                     System.out.println(c.getIDString());
@@ -83,12 +89,9 @@ public class Team_Juliett_processor {
                     c.setDaysofWeek(meetingDays);
                     System.out.println(c.getDaysofWeek());
                     
-                    System.out.println("Starts at " + startTimeS);
-                    System.out.println("Ends at " + endTimeS);
+                    System.out.println("Starts at " + startTimeS + startTimeS1);
+                    System.out.println("Ends at " + endTimeS + endTimeS1);
                     
-                    DateFormat format = new SimpleDateFormat("HH:mm:ss"); 
-                    Date startTime = format.parse(startTimeS);
-                    System.out.println(startTime);
                     
                     System.out.println("\n");
                     //c.setDaysofWeek(meetingDays));

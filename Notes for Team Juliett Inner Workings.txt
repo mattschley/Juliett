@@ -14,6 +14,7 @@ Section I: To-Do
 
 Section II:
 ====================================================================================================
-
+June 1st Goals: 
+- Let's have creation of User profile after getting relevant info from site. 
 Section III:
 ====================================================================================================

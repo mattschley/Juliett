@@ -14,6 +14,7 @@ public class schedule {
     
     private Course[] mand_courses;
     private Course[] opti_courses;
+    private schedule[] schedule_courses;
     private int rating;
     static private int[] warning_messages;
     
@@ -33,7 +34,7 @@ public class schedule {
     }
     
     }
-    
+   
     public void setWarningMessage(int n){
         if (n == NOLUNCH)
             warningmessage += "you can't eat lunch!";
@@ -48,7 +49,7 @@ public class schedule {
         return warningmessage;
     }
     
-       
+    public 
         
     public static final int NOLUNCH = 41; 
     public static final int LONGWALK = 42;

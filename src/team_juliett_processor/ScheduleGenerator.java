@@ -20,8 +20,13 @@ public class ScheduleGenerator
     public ScheduleGenerator(schedule[] VS)
     {
         validSchedules = VS;
+        getNumOfMandClasses();
     }
     
+    priavte void getNumOfMandClasses()
+    {
+        
+    }
     public void RankSchedules(schedule[] s)
     {
         for(int i = 0; i < s[i].schedule_courses.length; i++) //change this

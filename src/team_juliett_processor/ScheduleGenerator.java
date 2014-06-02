@@ -23,13 +23,13 @@ public class ScheduleGenerator
         getNumOfMandClasses();
     }
     
-    priavte void getNumOfMandClasses()
+    private void getNumOfMandClasses()
     {
         
     }
     public void RankSchedules(schedule[] s)
     {
-        for(int i = 0; i < s[i].schedule_courses.length; i++) //change this
+        for(int i = 0; i < s[i].getMandClasses().length; i++) //change this
         {
             //Check what has the most number of mandatory classes - highest rank automatically
             

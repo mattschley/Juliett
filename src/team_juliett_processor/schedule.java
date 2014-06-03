@@ -5,27 +5,62 @@
  */
 
 package team_juliett_processor;
-
+import java.util.*;
 /**
  *
  * @author talilaifer
  */
 public class schedule {
     
+    public static final int NOLUNCH = 41; 
+    public static final int LONGWALK = 42;
+    
     private Course[] mand_courses;
     private Course[] opti_courses;
+    private Course[] all_courses;
     private schedule[] schedule_courses;
-    private int rating;
     static private int[] warning_messages;
+    private schedule[] to_be_rated;
+    private int rank = 0;
     
-    
+    public int scheduleScore = 0;
     private String warningmessage;
     
     public schedule(Course[] courses1, Course[] courses2){
         warningmessage = "";
         mand_courses = courses1;
         opti_courses = courses2; 
-        rating = 0; 
+        scheduleScore = 0;
+    }
+    
+    public schedule(Course[] c1)
+    {
+        
+        warningmessage = "";
+        all_courses = c1;
+        scheduleScore = 0;
+    }
+    
+    
+    public schedule(ArrayList<ArrayList<Course>> l) //make the array of schedules from an arraylist of arraylist of courses
+    {
+        schedule_courses = new schedule[l.size()];
+        for(int j = 0; j < l.size(); j++)
+        {
+            ArrayList<Course> temp = l.get(j);
+            Course[] a = new Course[temp.size()];
+            for(int i = 0; i < a.length; i++)
+            {
+                a[i] = temp.get(i);
+            }
+            schedule_courses[j] = new schedule(a);
+        }
+        scheduleScore = 0;
+    }
+    
+    public schedule[] getAllSchedules()
+    {
+        return schedule_courses;
     }
     public void processWarningArray(int[] n){
     for(int i = 0; i < n.length; i++){
@@ -49,10 +84,33 @@ public class schedule {
         return warningmessage;
     }
     
-    public 
-        
-    public static final int NOLUNCH = 41; 
-    public static final int LONGWALK = 42;
+    public int NumOfMandClasses()
+    {
+        return mand_courses.length;
+    }
     
+    public Course[] getMandCourses()
+    {
+        return mand_courses;
+    }
     
+     public Course[] getOptCourses()
+    {
+        return opti_courses;
+    }
+     
+    public Course[] getAllCourses()
+    {
+        return all_courses;
+    }
+    
+    public void setRank(int r)
+    {
+        rank = r;
+    }
+    
+    public int getRank()
+    {
+        return rank;
+    }
 }
